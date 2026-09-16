@@ -1,0 +1,286 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 15px;
+}
+
+.datetime {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 15px;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Controls */
+
+.controls {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.department-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dept-btn.active {
+    background: #111827;
+}
+
+.sorting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sorting select {
+    padding: 9px;
+    border-radius: 5px;
+}
+
+/* Status */
+
+.status {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Statistics */
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Highest salary */
+
+.highest-salary {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.highest-salary h2 {
+    margin-bottom: 15px;
+}
+
+#highestEmployee {
+    font-size: 18px;
+}
+
+/* Employees */
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.employee-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.employee-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.employee-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.employee-info {
+    padding: 18px;
+}
+
+.employee-info h3 {
+    margin-bottom: 10px;
+}
+
+.employee-info p {
+    margin: 7px 0;
+    color: #555;
+}
+
+.delete-btn {
+    width: 100%;
+    margin-top: 12px;
+    background: #dc2626;
+}
+
+/* Add employee */
+
+.add-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.add-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#employeeForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-group small {
+    color: #dc2626;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+.add-btn {
+    grid-column: span 2;
+    background: #16a34a;
+    padding: 14px;
+}
+
+/* Empty */
+
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .employee-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statistics {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    main {
+        width: 95%;
+    }
+
+    .employee-container {
+        grid-template-columns: 1fr;
+    }
+
+    #employeeForm {
+        grid-template-columns: 1fr;
+    }
+
+    .add-btn {
+        grid-column: span 1;
+    }
+
+    .datetime {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
